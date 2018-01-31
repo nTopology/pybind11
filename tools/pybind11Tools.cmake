@@ -173,7 +173,8 @@ function(pybind11_add_module target_name)
   endif()
 
   # Make sure C++11/14 are enabled
-  target_compile_options(${target_name} PUBLIC ${PYBIND11_CPP_STANDARD})
+  # target_compile_options(${target_name} PUBLIC ${PYBIND11_CPP_STANDARD})
+  target_compile_features(${target_name} PUBLIC cxx_std_17)
 
   if(ARG_NO_EXTRAS)
     return()
